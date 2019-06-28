@@ -2,7 +2,7 @@
 
 //FUNCTIONS DECLARATION
 function getIntRandom(from = 0, to = 1) {
-  
+
 
   return +from <= +to ? Math.floor(Math.random() * +to) + +from : false;
 }
@@ -19,7 +19,7 @@ function createSimilarCharacter(names, secondNames, coatColors, eyesColors) {
   }
 }
 
-function createDOMSimilarCharacter(template, character) {
+function createNodeSimilarCharacter(template, character) {
 
   let temp = template.content.cloneNode(true);
 
@@ -29,10 +29,6 @@ function createDOMSimilarCharacter(template, character) {
 
 
   return temp;
-}
-
-function insertCharacterIntoDOM(container, character) {
-  container.appendChild(character);
 }
 
 //VARIABLES DECLARATION
@@ -92,7 +88,7 @@ for (let i = 0; i < countOfSimilarCharacters; i++) {
   similarCharacters.push(createSimilarCharacter(firstNames, secondNames,
           coatColors, eyesColors));
   //creating similar character Node
-  similarCharactersNodes.push(createDOMSimilarCharacter(characterTemplate, similarCharacters[i]));
+  similarCharactersNodes.push(createNodeSimilarCharacter(characterTemplate, similarCharacters[i]));
   //insert similar character Node into html
   similarList.appendChild(similarCharactersNodes[i]);
 }
