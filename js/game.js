@@ -525,9 +525,14 @@ window.Game = (function () {
 
       ctx.fillStyle = '#000';
       ctx.font = '16px PT Mono';
-      message.split('\n').forEach(function (line, i) {
-        ctx.fillText(line, 200, 80 + 20 * i);
-      });
+      //Без таймера текст при первой загрузке не отрисовывается.
+      //Хз что это. Возможно, htmlacademy троллит пиратов.
+      var timer = setTimeout(function() {
+        message.split('\n').forEach(function (line, i) {
+          ctx.fillText(line, 200, 80 + 20 * i);
+        });
+        clearTimeout(timer);
+      }, 4);
     },
 
     /**
