@@ -15,7 +15,6 @@
       if (xhr.status === 200) {
         try {
           response = JSON.parse(xhr.responseText);
-          window.similarWizards = response;
           onLoad(response);
         } catch (e) {
           console.log(e);
