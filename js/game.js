@@ -532,7 +532,7 @@ window.Game = (function () {
           ctx.fillText(line, 200, 80 + 20 * i);
         });
         clearTimeout(timer);
-      }, 10);
+      }, 500);
     },
 
     /**
